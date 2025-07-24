@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sitio web de DigiCam - Especialistas en fotografía digital" />
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="SC2.css" />
+  <title>Menú Principal - DigiCam</title>
+  <style>
+    .slider-banner {
+      position: relative;
+      width: 100%;
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    .slider-container {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slide-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0,0,0,0.6);
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.3);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 1rem;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .prev {
+      left: 1rem;
+    }
+
+    .next {
+      right: 1rem;
+    }
+
+    .slider-nav {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 1rem;
+      z-index: 10;
+    }
+
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      border: none;
+      background-color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .slider-dot.active {
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo-container">
+        <img src="https://media.tenor.com/DKNIATB9WxIAAAAM/teto-kasane-teto.gif" style="width: 150px; height: auto;" alt="Logo DigiCam" class="logo-img">
+        <div class="logo-text">
+          <h1>DIGI<span>CAM</span></h1>
+        </div>
+      </div>
+      <div class="nav-container">
+        <nav class="main-nav">
+          <span class="close-menu"><i class="fas fa-times"></i></span>
+          <a href="#">Inicio</a>
+          <a href="Catalog.html">Catálogo</a>
+          <a href="Colecciones.html">Colecciones</a>
+        </nav>
+        <div class="nav-icons">
+          <a href="#" aria-label="Buscar"><i class="fas fa-search"></i></a>
+          <a href="#" class="cart-icon" aria-label="Carrito de compras">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">3</span>
+          </a>
+          <a href="#" aria-label="Cuenta de usuario"><i class="fas fa-user"></i></a>
+          <button class="menu-toggle" aria-label="Menú"><i class="fas fa-bars"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SLIDER FUNCIONAL CON 5 BANNERS -->
+  <section class="slider-banner", style="width: 1856px; height: 500px;">
+    <div class="slider-container">
+      <div class="slide active">
+        <img src="lens.jpeg" alt="Promoción 1 ">
+        <div class="slide-content">
+          <h2>Promoción Especial</h2>
+          <p>Descuentos exclusivos en cámaras profesionales</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="leuca.jpg" alt="Promoción 2">
+        <div class="slide-content">
+          <h2>Nuevos Lanzamientos</h2>
+          <p>Descubre nuestra última colección 2023</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="XDcards.webp" alt="Promoción 3">
+        <div class="slide-content">
+          <h2>¿Problemas con las tarjetas modernas?</h2>
+          <p>Contamos tambien con tarjetas retrocompatibles</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="nwea.jpg" alt="Promoción 4">
+        <div class="slide-content">
+          <h2>Accesorios Premium</h2>
+          <p>Todo lo que necesitas para tus sesiones fotográficas</p>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="hero-lg-2.jpg" alt="Promoción 5">
+        <div class="slide-content">
+          <h2>Servicio Técnico</h2>
+          <p>Expertos en reparación y mantenimiento de equipos</p>
+        </div>
+      </div>
+    </div>
+    <button class="slider-arrow prev" aria-label="Slide anterior">❮</button>
+    <button class="slider-arrow next" aria-label="Slide siguiente">❯</button>
+    <div class="slider-nav">
+      <button class="slider-dot active" aria-label="Ir a slide 1"></button>
+      <button class="slider-dot" aria-label="Ir a slide 2"></button>
+      <button class="slider-dot" aria-label="Ir a slide 3"></button>
+      <button class="slider-dot" aria-label="Ir a slide 4"></button>
+      <button class="slider-dot" aria-label="Ir a slide 5"></button>
+    </div>
+  </section>
+
+  <!-- SECCION  DE ELECCIONES POPULARES -->  
+  <section style="background-color: var(--color-fondo); padding: 60px 20px;">
+  <h2 style="text-align: center; color: var(--color-acento); font-size: 2rem; margin-bottom: 40px;">Marcas Populares</h2>
+
+  <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; max-width: 1200px; margin: auto;">
+
+    <!-- Tarjeta 1 -->
+    <div style="background-color: var(--color-slider-bg); border-radius: 12px; width: 240px; padding: 20px; text-align: center; box-shadow: 0 0 10px #00000050;">
+      <img src="sONYYY.png" alt="Cámaras Digitales" style="width: 100%; border-radius: 10px;">
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div style="background-color: var(--color-slider-bg); border-radius: 12px; width: 240px; padding: 20px; text-align: center; box-shadow: 0 0 10px #00000050;">
+      <img src="Pentax.jpg" alt="Cámaras Analógicas" style="width: 100%; border-radius: 10px;">
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div style="background-color: var(--color-slider-bg); border-radius: 12px; width: 240px; padding: 20px; text-align: center; box-shadow: 0 0 10px #00000050;">
+      <img src="Nikkon.png" alt="Accesorios" style="width: 100%; border-radius: 10px;">
+    </div>
+
+    <!-- Tarjeta 4 -->
+    <div style="background-color: var(--color-slider-bg); border-radius: 12px; width: 240px; padding: 20px; text-align: center; box-shadow: 0 0 10px #00000050;">
+      <img src="Cannon.jpg" alt="Cámaras Retro" style="width: 100%; border-radius: 10px;">
+    </div>
+  </div>
+</section>
+
+<section style="background-color: var(--color-fondo); padding: 60px 20px;">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; align-items: center; gap: 40px;">
+
+    <!-- Contenido textual -->
+    <div style="flex: 1; min-width: 300px;">
+      <h2 style="color: var(--color-acento); font-size: 2rem; margin-bottom: 20px;">¿Cómo comprar con DigiCam GT?</h2>
+      <p style="color: var(--color-texto); font-size: 1.1rem; line-height: 1.6;">
+        Aprende fácilmente cómo adquirir cámaras digitales, analógicas y más productos únicos en nuestro sitio.
+        Te guiamos paso a paso para que vivas una experiencia de compra segura, eficiente y futurista.
+      </p>
+      <p style="color: var(--color-texto); margin-top: 15px;">
+        Explora nuestras colecciones, selecciona tus favoritos y recibe en casa lo mejor en tecnología y estilo retro.
+      </p>
+      <a href="#" style="display: inline-block; margin-top: 25px; padding: 12px 24px; background-color: var(--color-acento); color: var(--color-boton-texto); text-decoration: none; border-radius: 8px; transition: background 0.3s;">
+        Ver guía completa
+      </a>
+    </div>
+
+    <!-- Contenedor de video o imagen -->
+    <div style="flex: 1; min-width: 300px;">
+      <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 0 10px #00000060;">
+        <iframe src="https://www.youtube.com/embed/Fc3U3L2RZ9M" title="Tutorial DigiCam" style="position: absolute; top:0; left:0; width:100%; height:100%; border:0;" allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<section id="nuevas-llegadas" style="background-color: var(--color-slider-bg); padding: 3rem 1rem; color: var(--color-texto);">
+  <h2 style="text-align: center; font-family: 'Orbitron', sans-serif; margin-bottom: 2rem;">Ingresos recientes</h2>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+    
+    <!-- Producto -->
+    <div style="background-color: var(--color-header); border-radius: 10px; overflow: hidden; text-align: center; padding: 1rem;">
+      <img src="Camara Folder/nexc3.jpg" alt="Camara 1" style="width: 90%;height: 62%; border-radius: 6px;">
+      <h3 style="margin: 0.5rem 0; font-family: 'Orbitron', sans-serif;">Sony NEX C3</h3>
+      <p style="color: var(--color-acento); font-weight: bold;">Q2,599.00</p>
+       <h5><ul class="lista-horizontal">
+        <li>Sensor de 12Mp</li>
+        <li>Zoom optico de 5x</li>
+        <li>Incluye Bateria original </li>
+        <li>Cargador </li>
+      </ul>
+    </h5>  
+
+    </div>
+
+    <!-- Copiar este bloque para los siguientes productos -->
+    <div style="background-color: var(--color-header); border-radius: 10px; overflow: hidden; text-align: center; padding: 1rem;">
+      <img src="Camara Folder/Nikkon.jpg" alt="Camara 2" style="width: 100%;height: 62%; border-radius: 6px; ">
+      <h3 style="margin: 0.5rem 0; font-family: 'Orbitron', sans-serif;">Nikkon Coolpix S640 </h3>
+      <p style="color: var(--color-acento); font-weight: bold;">Q900.00</p>
+     <h5><ul class="lista-horizontal">
+        <li>Sensor de 12Mp</li>
+        <li>Zoom optico de 5x</li>
+        <li>Incluye Bateria original </li>
+        <li>Cargador </li>
+      </ul>
+    </h5>  
+
+    </div>
+
+    <div style="background-color: var(--color-header); border-radius: 10px; overflow: hidden; text-align: center; padding: 1rem;">
+      <img src="Camara Folder/PENTAX Q10.jpg" alt="Camara 3" style="width: 100%; height: 62%; border-radius: 6px;">
+      <h3 style="margin: 0.5rem 0; font-family: 'Orbitron', sans-serif;">Pentax opio i10</h3>
+      <p style="color: var(--color-acento); font-weight: bold;">Q1,200.00</p>
+       <h5><ul class="lista-horizontal">
+        <li>Sensor de 12Mp</li>
+        <li>Zoom optico de 5x</li>
+        <li>Incluye Bateria original </li>
+        <li>Cargador </li>
+      </ul>
+    </h5>  
+
+    </div>
+
+    <!-- Agrega más productos hasta completar los 12 -->
+    <div style="background-color: var(--color-header); border-radius: 10px; overflow: hidden; text-align: center; padding: 1rem;">
+      <img src="Camara Folder/Sony Ciber.jpg" alt="Camara 4" style="width: 100%; border-radius: 6px;">
+      <h3 style="margin: 0.5rem 0; font-family: 'Orbitron', sans-serif;">Sony Cybershot DSC T9</h3>
+      <p style="color: var(--color-acento); font-weight: bold;">Q500.00</p>
+       <h5><ul class="lista-horizontal">
+        <li>Sensor de 12Mp</li>
+        <li>Zoom optico de 5x</li>
+        <li>Incluye Bateria original </li>
+        <li>Cargador </li>
+      </ul>
+    </h5>  
+
+    </div>
+
+    <!-- ...otros 8 productos similares... -->
+
+  </div>
+
+  <!-- Botón "Ver más" -->
+  <div style="text-align: center; margin-top: 3rem;">
+    <a href="#catalogo" style="background-color: var(--color-acento); color: var(--color-boton-texto); padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-family: 'Orbitron', sans-serif; transition: background 0.3s;">
+      Ver más del catálogo
+    </a>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const steps = document.querySelectorAll('.process-step');
+    const dots = document.querySelectorAll('.process-dots .dot');
+    const prevBtn = document.querySelector('.process-prev');
+    const nextBtn = document.querySelector('.process-next');
+    let currentIndex = 0;
+    const intervalTime = 5000; // 5 segundos
+    let slideInterval;
+    
+    function updateSlider() {
+      steps.forEach((step, index) => {
+        step.classList.toggle('active', index === currentIndex);
+      });
+      
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+    
+    function nextStep() {
+      currentIndex = (currentIndex + 1) % steps.length;
+      updateSlider();
+    }
+    
+    function prevStep() {
+      currentIndex = (currentIndex - 1 + steps.length) % steps.length;
+      updateSlider();
+    }
+    
+    function startInterval() {
+      slideInterval = setInterval(nextStep, intervalTime);
+    }
+    
+    // Event listeners
+    nextBtn.addEventListener('click', () => {
+      nextStep();
+      resetInterval();
+    });
+    
+    prevBtn.addEventListener('click', () => {
+      prevStep();
+      resetInterval();
+    });
+    
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentIndex = index;
+        updateSlider();
+        resetInterval();
+      });
+    });
+    
+    function resetInterval() {
+      clearInterval(slideInterval);
+      startInterval();
+    }
+    
+    // Iniciar slider automático
+    startInterval();
+    
+    // Pausar al interactuar
+    const slider = document.querySelector('.process-slider');
+    slider.addEventListener('mouseenter', () => {
+      clearInterval(slideInterval);
+    });
+    
+    slider.addEventListener('mouseleave', startInterval);
+  });
+</script>
+
+
+<!-- Slider de proceso de compra -->
+<div class="process-slider">
+  <div class="process-container">
+    <!-- Paso 1 -->
+    <div class="process-step active">
+      <div class="step-number">1</div>
+      <div class="step-content">
+        <h3>Enviamos a todo el pais (recorgo incluido si es fuera de la capital).</h3>
+        <p>Hasta la puerta de tu casa.</p>
+      </div>
+    </div>
+    
+    <!-- Paso 2 -->
+    <div class="process-step">
+      <div class="step-number">2</div>
+      <div class="step-content">
+        <h3>Nuestras Camaras han sido pre configuradas por experto</h3>
+        <p>Te enviamos un correo con los mejores presets para que inicies con tu camara.</p>
+      </div>
+    </div>
+    
+    <!-- Paso 3 -->
+    <div class="process-step">
+      <div class="step-number">3</div>
+      <div class="step-content">
+        <h3>Todos nuestros equipos poseen 1 año de garantia</h3>
+        <p>nuestras camaras pasan por un riguroso proceso de inspeccion de calidad.</p>
+      </div>
+    </div>
+    
+    <!-- Paso 4 -->
+    <div class="process-step">
+      <div class="step-number">4</div>
+      <div class="step-content">
+        <h3>Por que elegirnos?</h3>
+        <p>Contribuyes a un proceso de reciclaje ya que evitas q estos equipos terminen como desechos electronicos</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Controles -->
+  <button class="process-prev">‹</button>
+  <button class="process-next">›</button>
+  
+  <!-- Indicadores -->
+  <div class="process-dots">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+  
+  <!-- Enlace de ayuda -->
+  <div class="process-help">
+    <p>Algun problema con tu compra?</p>
+
+  </div>
+</div>
+
+<style>
+  .process-slider {
+    max-width: 800px;
+    margin: 40px auto;
+    position: relative;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .process-container {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    height: 300px;
+  }
+  
+  .process-step {
+    min-width: 100%;
+    padding: 30px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .process-step.active {
+    opacity: 1;
+    position: relative;
+  }
+  
+  .step-number {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #4e73df;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .step-content h3 {
+    color: #2e3a4d;
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  
+  .step-content p {
+    color: #6c757d;
+    line-height: 1.6;
+  }
+  
+  .process-prev, .process-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    font-size: 20px;
+    z-index: 10;
+  }
+  
+  .process-prev {
+    left: 10px;
+  }
+  
+  .process-next {
+    right: 10px;
+  }
+  
+  .process-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .process-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #d1d5db;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .process-dots .dot.active {
+    background: #4e73df;
+  }
+  
+  .process-help {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    color: #6c757d;
+  }
+  
+  .process-help a {
+    color: #4e73df;
+    text-decoration: none;
+  }
+  
+  .process-help a:hover {
+    text-decoration: underline;
+  }
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <main class="container">
+    <!-- CONTENIDO OMITIDO PARA BREVEDAD -->
+  </main>
+
+ <footer style="background: var(--color-header); color: var(--color-texto); font-family: inherit; padding: 40px 20px;">
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 30px; max-width: 1200px; margin: auto;">
+
+    <!-- Logo + Nombre -->
+    <div style="flex: 1; min-width: 220px; text-align: center;">
+      <img src="https://media.tenor.com/DKNIATB9WxIAAAAM/teto-kasane-teto.gif"
+           alt="Logo DigiCam"
+           style="width: 100px; border-radius: 10px; box-shadow: 0 0 8px var(--color-acento);">
+      <h2 style="margin: 10px 0; color: var(--color-acento);">DigiCam GT</h2>
+      <p style="font-size: 0.9rem; color: var(--color-boton-texto);">Visita nuestras páginas</p>
+      <p style="margin-top: 10px; font-size: 0.8rem; color: var(--color-acento-hover);">© 2025 DigiCam GT</p>
+    </div>
+
+    <!-- Información de contacto -->
+    <div style="flex: 1.5; min-width: 250px;">
+      <h3 style="color: var(--color-acento); font-size: 1.1rem;">Contáctanos</h3>
+      <ul style="list-style: none; padding: 0; font-size: 0.95rem; line-height: 1.8; color: var(--color-boton-texto);">
+        <li>📞 +502 1234 5678</li>
+        <li>📧 contacto@digicam.gt</li>
+        <li>🌐 www.digicam.gt</li>
+      </ul>
+    </div>
+
+    <!-- Redes sociales -->
+    <div style="flex: 1; min-width: 200px; text-align: center;">
+      <h3 style="color: var(--color-acento); font-size: 1.1rem;">Síguenos</h3>
+      <div style="display: flex; justify-content: center; gap: 15px; font-size: 1.5rem; margin-top: 10px;">
+        <a href="#" style="color: var(--color-acento-hover); text-decoration: none;">📘</a>
+        <a href="#" style="color: var(--color-acento-hover); text-decoration: none;">📷</a>
+        <a href="#" style="color: var(--color-acento-hover); text-decoration: none;">🐦</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mapa embebido -->
+  <div style="margin-top: 30px; border-radius: 12px; overflow: hidden; box-shadow: 0 0 10px var(--color-acento);">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3877.9738297197695!2d-90.51204682401704!3d14.634914786962468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a1f01e3de71b%3A0x2a4e22fa77489ab6!2sCentro%20Hist%C3%B3rico%2C%20Ciudad%20de%20Guatemala!5e0!3m2!1ses-419!2sgt!4v1721748367363!5m2!1ses-419!2sgt"
+      width="100%" height="280" style="border: 0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const slider = document.querySelector('.slider-container');
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.slider-dot');
+      const prevBtn = document.querySelector('.prev');
+      const nextBtn = document.querySelector('.next');
+
+      let currentIndex = 0;
+      const slideTime = 8000;
+      let slideInterval;
+
+      function updateSlider() {
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+        slides.forEach((s, i) => s.classList.toggle('active', i === currentIndex));
+        dots.forEach((d, i) => d.classList.toggle('active', i === currentIndex));
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSlider();
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSlider();
+      }
+
+      function startSlider() {
+        slideInterval = setInterval(nextSlide, slideTime);
+      }
+
+      function resetTimer() {
+        clearInterval(slideInterval);
+        startSlider();
+      }
+
+      nextBtn.addEventListener('click', () => {
+        nextSlide();
+        resetTimer();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        prevSlide();
+        resetTimer();
+      });
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => {
+          currentIndex = i;
+          updateSlider();
+          resetTimer();
+        });
+      });
+
+      startSlider();
+      slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+      slider.addEventListener('mouseleave', startSlider);
+    });
+  </script>
+</body>
+
+
+</html>
